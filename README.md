@@ -1,63 +1,90 @@
-# 🏦 BuggyBankingApp
+# 🏦 Core Banking CLI
 
-A deliberately flawed command-line banking application built to test your debugging and problem-solving skills along with giving a real world like experience on open source contributions.
+A command-line banking application designed to simulate core banking functionalities using Java.
 
-This project is part of the CodeJAM Future Minds coding competition organized by the Department of Computer Science & Engineering, University of Moratuwa.
-
----
-
-## 🚀 Project Description
-
-BuggyBankingApp is a simple CLI-based Java application simulating a basic banking system. It allows users to:
-
-- Create bank accounts
-- Deposit and withdraw money
-- Transfer funds between accounts
-- View account information and transaction history
-
-However... it’s buggy on purpose 😈  
-You must identify and fix logic, input handling, and structural issues. Functionality is validated automated tests running when you raised PRs (pull requests).
+This project provides a practical environment for developers interested in contributing to a basic banking simulation, focusing on backend logic and command-line interaction.
 
 ---
 
-## 🧱 Tech Stack
+## 📜 Project Description
+
+Core Banking CLI is a Java application offering basic banking operations via a command-line interface. Users can interact with the system to manage accounts and perform transactions. The application aims to simulate essential banking workflows.
+
+---
+
+## ✨ Features
+
+- Create new bank accounts.
+- Deposit funds into accounts.
+- Withdraw funds from accounts.
+- Transfer funds between existing accounts.
+- View account details and transaction history.
+
+---
+
+## 🛠️ Tech Stack
 
 - Java
-- Maven
-- JUnit 5
+- Maven (Note: Build instructions currently use direct `javac`)
+- JUnit 5 (for automated testing)
 
 ---
 
-## 📂 Project Structure
+## 🚀 Getting Started
 
-| File                   | Description                                         |
-|------------------------|-----------------------------------------------------|
-| AccountRepository.java | Manages the storage and retrieval of account data. |
-| BankAccount.java       | Holds data and logic for individual bank accounts.  |
-| BankService.java       | Implements core banking business logic (manages accounts, processes actions). |
-| InputUtil.java         | Handles all command-line interface (CLI) input.    |
-| Main.java              | Controls the command-line interface (CLI) loop and menu. |
-| Transaction.java       | Represents a single banking transaction (deposit, withdrawal, transfer). |
-| TransactionLogger.java | Logs and prints transaction information to the CLI.   |
+### Prerequisites
 
+- Java Development Kit (JDK) installed.
 
----
+### Compile and Run
 
-## ▶️ Compile and Run the Application
-
-```bash
-javac -d out src\main\java\cse\school\codejam\*.java
-java -cp out cse.school.codejam.Main
-```
-
-📌 Make sure you're running the above commands from the project root directory.
+1.  Navigate to the project's root directory in your terminal.
+2.  Compile the source code:
+    ```bash
+    javac -d out src/main/java/cse/school/codejam/*.java
+    ```
+3.  Run the application:
+    ```bash
+    java -cp out cse.school.codejam.Main
+    ```
 
 ---
 
-## ⚠️ Note
+## 📁 Project Structure Overview
 
-This project contains intentional bugs in logic and structure.  
-Your job is to fix them under time pressure 💪  
-Good luck and happy debugging!
+The project follows a standard Java structure, with key classes including:
+
+| File                   | Description                                          |
+|------------------------|------------------------------------------------------|
+| AccountRepository.java | Manages storage and retrieval of account data.      |
+| BankAccount.java       | Represents individual bank accounts and their logic. |
+| BankService.java       | Implements core banking business logic.             |
+| InputUtil.java         | Handles command-line interface (CLI) input.          |
+| Main.java              | Main application entry point and CLI loop control.   |
+| Transaction.java       | Represents a single banking transaction.             |
+| TransactionLogger.java | Logs and displays transaction information.           |
+
+*(Note: The project may currently contain bugs or areas needing refinement. Specific issues are best tracked via the repository's GitHub Issues tab.)*
 
 ---
+
+## 🚩 How to Contribute
+
+We welcome contributions to improve the Core Banking CLI! If you'd like to help:
+1.  Identify bugs, inconsistencies, or areas for improvement within the codebase (check existing GitHub Issues or explore the application).
+2.  Implement fixes or enhancements for these issues.
+3.  Submit your solutions via Pull Requests (PRs) to the main repository, following standard contribution guidelines (e.g., clear commit messages, focused changes).
+
+---
+
+## 🧪 Testing & Validation
+
+- An automated testing pipeline (using JUnit 5) is set up to run against submitted Pull Requests.
+- These tests help ensure that contributions maintain or improve the core functionality and don't introduce regressions.
+- Passing the automated checks is a key step for merging contributions.
+
+---
+
+## 🙏 Thank You!
+
+We appreciate your interest in contributing to the Core Banking CLI project.
