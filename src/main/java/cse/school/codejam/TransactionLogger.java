@@ -1,6 +1,9 @@
 package cse.school.codejam;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class TransactionLogger {
     private final Map<String, List<Transaction>> map = new HashMap<>();
@@ -10,8 +13,8 @@ public class TransactionLogger {
     }
 
     public void printHistory(String accId) {
-        List<Transaction> history = map.getOrDefault(accId, new ArrayList<>());
-        if (history.isEmpty()) {
+        List<Transaction> history = map.get(accId);
+        if (history == null || history.isEmpty()) {
             System.out.println("No transactions for account: " + accId);
         } else {
             System.out.println("Transaction History for " + accId);
