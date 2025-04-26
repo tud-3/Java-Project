@@ -31,11 +31,11 @@ public class Transaction {
     public String getTransactionDetails() {
         String msg = "";
         if (type == TransactionType.DEPOSIT) {
-            msg = "Deposit of " + amount + " to account " + toAccountNumber;
+            msg = "Deposit of " + amount + " to account " + (toAccountNumber != null ? toAccountNumber : "N/A");
         } else if (type == TransactionType.WITHDRAW) {
-            msg = "Withdrawal of " + amount + " from account " + fromAccountNumber;
+            msg = "Withdrawal of " + amount + " from account " + (fromAccountNumber != null ? fromAccountNumber : "N/A");
         } else if (type == TransactionType.TRANSFER) {
-            msg = "Transfer of " + amount + " from account " + fromAccountNumber + " to account " + toAccountNumber;
+            msg = "Transfer of " + amount + " from account " + (fromAccountNumber != null ? fromAccountNumber : "N/A") + " to account " + (toAccountNumber != null ? toAccountNumber : "N/A");
         }
         return msg + " on " + timestamp;
     }
