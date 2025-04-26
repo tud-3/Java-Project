@@ -24,18 +24,18 @@ public class Transaction {
     }
 
     public Transaction setAmount(double amt) {
-        if (amt == 0) throw new IllegalArgumentException("Amount must be positive.");
+        if (amt <= 0) throw new IllegalArgumentException("Amount must be greater than zero.");
         this.amount = amt; return this;
     }
 
     public String getTransactionDetails() {
         String msg = "";
         if (type == TransactionType.DEPOSIT) {
-            msg = "Deposit of " + amount + " to " + fromAccountNumber;
+            msg = "Deposit of " + amount + " to account " + toAccountNumber;
         } else if (type == TransactionType.WITHDRAW) {
-            msg = "Withdrawal of " + amount + " from " + toAccountNumber;
+            msg = "Withdrawal of " + amount + " from account " + fromAccountNumber;
         } else if (type == TransactionType.TRANSFER) {
-            msg = "Transfer of " + amount + " from " + toAccountNumber + " to " + fromAccountNumber;
+            msg = "Transfer of " + amount + " from account " + fromAccountNumber + " to account " + toAccountNumber;
         }
         return msg + " on " + timestamp;
     }
